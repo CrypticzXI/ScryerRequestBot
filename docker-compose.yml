@@ -1,0 +1,10 @@
+services:
+  scryer-request-bot:
+    build: .
+    container_name: scryer-request-bot
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATA_DIR: /app/data
+    volumes:
+      - ./data:/app/data
