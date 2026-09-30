@@ -48,11 +48,19 @@ npm install
 npm start
 ```
 
-Or with Docker:
+Or with Docker, using the prebuilt image (amd64 + arm64). Put your `.env` next to [`docker-compose.yml`](docker-compose.yml), then run:
 
 ```bash
-docker compose up -d --build
+docker compose up -d
 ```
+
+Or without compose:
+
+```bash
+docker run -d --name scryer-request-bot --restart unless-stopped --env-file .env -e DATA_DIR=/app/data -v ./data:/app/data ghcr.io/crypticzxi/scryerrequestbot:latest
+```
+
+To update: `docker compose pull && docker compose up -d`.
 
 ### 5. In Discord
 1. Give people the **Scryer Request** role, and yourself or your mods **Scryer Manager**.

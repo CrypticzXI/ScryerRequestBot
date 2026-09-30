@@ -1,6 +1,8 @@
 services:
   scryer-request-bot:
-    build: .
+    image: ghcr.io/crypticzxi/scryerrequestbot:latest
+    # To build from source instead, comment out "image" above and uncomment:
+    # build: .
     container_name: scryer-request-bot
     restart: unless-stopped
     env_file: .env
